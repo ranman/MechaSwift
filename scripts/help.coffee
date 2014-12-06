@@ -56,6 +56,7 @@ module.exports = (robot) ->
   robot.respond /help\s*(.*)?$/i, (msg) ->
     cmds = robot.helpCommands()
     filter = msg.match[1]
+    msg.message.user.room = null
 
     if filter
       cmds = cmds.filter (cmd) ->
