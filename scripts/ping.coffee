@@ -16,6 +16,11 @@ module.exports = (robot) ->
 
   robot.respond /ECHO (.*)$/i, (msg) ->
     msg.send msg.match[1]
+    
+  # with optional trailing question mark
+  robot.respond /HELLYEAH(\?)?$/i, (msg) ->
+    # using markdown
+    msg.send "# #hellyeah!"
 
   robot.respond /TIME$/i, (msg) ->
     msg.send "Server time is: #{new Date()}"
